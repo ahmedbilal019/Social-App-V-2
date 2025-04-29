@@ -1,0 +1,61 @@
+.app-container {
+  display: flex;
+}
+.Heading {
+  margin: -40px;
+}
+.content {
+  width: 100%;
+}
+.sidebar {
+  min-height: 600px;
+  width: "170px";
+}
+
+.post-card {
+  padding: 10px;
+  margin: 20px 40px;
+  width: 30rem;
+}
+.badge {
+  margin: 4px;
+  padding: 7px;
+}
+.reactions {
+  margin: 15px 0 0 0;
+}
+.createPost {
+  width: 60%;
+  margin: 30px 100px;
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 10px;
+  box-shadow: 0px 1px 22px 1px #3636367e;
+}
+.createPost label {
+  font-weight: 600;
+}
+.createPost ::placeholder {
+  color: rgb(175, 175, 182);
+}
+.createPost textarea {
+  border-color: lightgray;
+}
+
+@media (max-width: 480px) {
+  .post-card {
+    font-size: small;
+    width: 56vw;
+    margin: 10px 10px;
+  }
+  .sidebar {
+    width: 108px;
+  }
+  .createPost textarea {
+    width: 120px;
+  }
+  .createPost {
+    width: 75%;
+    margin: 14px 36px;
+  }
+}

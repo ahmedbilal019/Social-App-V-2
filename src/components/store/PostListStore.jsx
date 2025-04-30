@@ -3,6 +3,7 @@ import { Children, createContext, useReducer } from "react";
 export const PostList = createContext({
   postList: [],
   addPost: () => {},
+  addInitialPosts: () => {},
   deletePost: () => {},
 });
 // reducer function
@@ -12,16 +13,14 @@ const postListReducer = (currPostList, action) => {
     newPostList = currPostList.filter((post) => post.id !== action.payload.id);
   } else if (action.type === "ADD_POST") {
     newPostList = [action.payload, ...currPostList];
-   
+  } else if (action.type === "ADD_INITIAL_POSTS") {
+    newPostList = action.payload.posts;
   }
   return newPostList;
 };
 
 const PostListProvider = ({ children }) => {
-  const [postList, dispatchPostList] = useReducer(
-    postListReducer,
-    DEFALT_POST_LIST
-  );
+  const [postList, dispatchPostList] = useReducer(postListReducer, []);
   const addPost = (userId, postBody, postTitle, postReactions, postTags) => {
     dispatchPostList({
       type: "ADD_POST",
@@ -34,9 +33,14 @@ const PostListProvider = ({ children }) => {
         tags: postTags,
       },
     });
-    // console.log(
-    //   `${userId},${postBody},${postTitle},${postReactions},${postTags}`
-    // );
+  };
+  const addInitialPosts = (posts) => {
+    dispatchPostList({
+      type: "ADD_INITIAL_POSTS",
+      payload: {
+        posts,
+      },
+    });
   };
   const deletePost = (postId) => {
     dispatchPostList({
@@ -45,32 +49,20 @@ const PostListProvider = ({ children }) => {
         id: postId,
       },
     });
-    // console.log(`delete post is called for  : ${postId}`);
   };
+
   return (
     <PostList.Provider
-      value={{ postList: postList, addPost: addPost, deletePost: deletePost }}
+      value={{
+        postList: postList,
+        addPost: addPost,
+        addInitialPosts: addInitialPosts,
+        deletePost: deletePost,
+      }}
     >
       {children}
     </PostList.Provider>
   );
 };
-const DEFALT_POST_LIST = [
-  {
-    id: "1",
-    title: "Going to Islamabad",
-    body: "Hey frends! i am going to islamabad, for trip",
-    reactions: 4,
-    userId: "user_9",
-    tags: ["Trip", "Pak-Capital", "islamabad"],
-  },
-  {
-    id: "2",
-    title: "Attending the TECH ceminar",
-    body: "Hey frends! i am going to attend the biggest tech ceminar at Lahore",
-    reactions: 10,
-    userId: "user_10",
-    tags: ["TECH ceminar", "Lahore", "IT"],
-  },
-];
+
 export default PostListProvider;

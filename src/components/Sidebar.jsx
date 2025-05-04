@@ -2,10 +2,7 @@ import React from "react";
 
 const Sidebar = ({ selectedTab, setSelectedTab }) => {
   return (
-    <div
-      className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
-      
-    >
+    <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar">
       <a
         href="/"
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
@@ -20,7 +17,6 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
         <li
           className="nav-item"
           onClick={() => {
-            // console.log("clicked");
             setSelectedTab("Home");
           }}
         >

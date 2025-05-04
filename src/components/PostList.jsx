@@ -9,13 +9,15 @@ const PostList = () => {
   const [fetching, setFetching] = useState(false);
 
   useEffect(() => {
-    setFetching(true);
-    fetch("https://dummyjson.com/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-        setFetching(false);
-      });
+    if (postList.length === 0) {
+      setFetching(true);
+      fetch("https://dummyjson.com/posts")
+        .then((res) => res.json())
+        .then((data) => {
+          addInitialPosts(data.posts);
+          setFetching(false);
+        });
+    }
   }, []);
 
   return (

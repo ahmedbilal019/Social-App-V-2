@@ -3,7 +3,7 @@ This is the version_2 of Social Post App where i have modified the previous vers
 
 In this project i have learned that ***How to fetch data from DummyApi, how useEffect() hook will be helpfull in data fetching, displaying a Loading spinner for user intraction.***  
 
-                 -------------------------------------------
+                 
 
  **Live Preview of Social Post App V-2:** https://socialmediapostsapp.netlify.app/  
  **Link for Version-1 of Social Post App Repo:** https://github.com/ahmedbilal019/Social-Media-Application 

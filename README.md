@@ -1,8 +1,9 @@
 # Social Media Application(Social Post)
-This Social media application is named as "**Social Post**" where user can create post and view post.
-This project is not fully functional like facebook and twitter as these applications are used for creating and viewing social media post but this project is a basic version where i have learned that **how to navigate between different pages, creating UI using Bootstrap, managing states and creating a new post using React form, getting input data using useRef hook**. 
+This is the version_2 of Social Post App where i have modified the previous version. In previoue version of this app, initial posts are hardcoded and user can also create a post. In v-2 initial post were fetched from DummyAPI, a Loading spinner will be shown at initial fetching, and a message will be shown when server did responce or error occure in fetching. User can also create post form ***Create Post*** option. 
 
-In this project i get data from React form inputs and then present this data in a attractive UI in the form of Posts. First two posts are hardcoded(written manually in the code), new posts can be removed on refreshing the app because i did not use any database for storing the posts. we can delete post from UI using delete icon. 
+In this project i have learned that ***How to fetch data from DummyApi, how useEffect() hook will be helpfull in data fetching, displaying a Loading spinner for user intraction.***  
 
-Social Post application can be used in different screen devices like mobile, tablets and PCs due to its responsive design. 
- **Live Preview:** https://socialpostsapp.netlify.app/  
+                 -------------------------------------------
+
+ **Live Preview of Social Post App V-2:** https://socialmediapostsapp.netlify.app/  
+ **Link for Version-1 of Social Post App Repo:** https://github.com/ahmedbilal019/Social-Media-Application 
